@@ -141,7 +141,7 @@ func (app *application) updateHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err = app.writeJSON(w, http.StatusNoContent, envelope{"updated": true}, nil)
+	err = app.writeJSON(w, http.StatusOK, envelope{"updated": true}, nil)
 	if err != nil {
 		app.serverErrorResponse(w, r, err)
 		return
@@ -163,7 +163,7 @@ func (app *application) deleteHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err = app.writeJSON(w, http.StatusNoContent, envelope{"deleted": true}, nil)
+	err = app.writeJSON(w, http.StatusOK, envelope{"deleted": true}, nil)
 	if err != nil {
 		app.serverErrorResponse(w, r, err)
 		return
